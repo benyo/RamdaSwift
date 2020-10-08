@@ -3,5 +3,5 @@ import XCTest
 import RamdaSwiftTests
 
 var tests = [XCTestCaseEntry]()
-tests += RamdaSwiftTests.allTests()
+tests += LogicTests.allTests()
 XCTMain(tests)
