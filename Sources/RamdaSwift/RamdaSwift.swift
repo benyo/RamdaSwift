@@ -1,1 +1,2 @@
 struct R {}
+struct RamdaSwift { }
