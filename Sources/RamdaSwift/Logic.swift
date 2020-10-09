@@ -9,25 +9,25 @@ import Foundation
 
 extension R {
     
-    static func both<T>(_ a: @escaping (T) ->  Bool, _ b: @escaping (T) ->  Bool) -> (T) ->  Bool {
+    public static func both<T>(_ a: @escaping (T) ->  Bool, _ b: @escaping (T) ->  Bool) -> (T) ->  Bool {
         return { value in
             return a(value) && b(value)
         }
     }
     
-    static func and(_ a: Bool, _ b: Bool) -> Bool {
+    public static func and(_ a: Bool, _ b: Bool) -> Bool {
         return a && b
     }
     
-    static func or(_ a: Bool, _ b: Bool) -> Bool {
+    public static func or(_ a: Bool, _ b: Bool) -> Bool {
         return a || b
     }
 
-    static func isNil<T>(_ a: Optional<T>) -> Bool {
+    public static func isNil<T>(_ a: Optional<T>) -> Bool {
         return a == nil
     }
     
-    static func isEmpty<T>(_ a: T) -> Bool {
+    public static func isEmpty<T>(_ a: T) -> Bool {
         switch a {
         case let val as String:
             return val.isEmpty
@@ -44,13 +44,13 @@ extension R {
         }
     }
     
-    static func ifElse<T>(_ a: @escaping (T) -> Bool, _ b: @escaping (T) -> T, _ c: @escaping (T) -> T) -> ((T) -> T)  {
+    public static func ifElse<T>(_ a: @escaping (T) -> Bool, _ b: @escaping (T) -> T, _ c: @escaping (T) -> T) -> ((T) -> T)  {
         return { anyValue in
             return a(anyValue) ? b(anyValue) : c(anyValue)
         }
     }
     
-    static func not<T>(_ a: T) -> Bool {
+    public static func not<T>(_ a: T) -> Bool {
         switch a {
         case let value as Bool:
             return value == false
