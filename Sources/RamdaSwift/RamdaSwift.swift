@@ -1,2 +1,1 @@
-struct R {}
-struct RamdaSwift { }
+public struct R {}
