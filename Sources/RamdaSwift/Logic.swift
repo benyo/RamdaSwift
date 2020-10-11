@@ -44,7 +44,7 @@ extension R {
         }
     }
     
-    public static func ifElse<T>(_ a: @escaping (T) -> Bool, _ b: @escaping (T) -> T, _ c: @escaping (T) -> T) -> ((T) -> T)  {
+    public static func ifElse<A, B>(_ a: @escaping (A) -> Bool, _ b: @escaping (A) -> B, _ c: @escaping (A) -> B) -> ((A) -> B)  {
         return { anyValue in
             return a(anyValue) ? b(anyValue) : c(anyValue)
         }
