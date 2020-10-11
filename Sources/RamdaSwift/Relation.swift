@@ -20,9 +20,9 @@ extension R {
         }
     }
     
-    public static func equals<A, B: Comparable>(key keyPath: KeyPath<A, B>, b: A ) -> (A) -> Bool {
+    public static func equals<A, B: Comparable>(key keyPath: KeyPath<A, B>, _ b: B ) -> (A) -> Bool {
         return { a in
-            return a[keyPath: keyPath] == b[keyPath: keyPath]
+            return a[keyPath: keyPath] == b
         }
     }
     
