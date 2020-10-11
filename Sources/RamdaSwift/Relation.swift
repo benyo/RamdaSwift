@@ -14,6 +14,12 @@ extension R {
         return a == b
     }
     
+    public static func equals<T: Comparable>(_ b: T) -> (T) -> Bool {
+        return { a in
+            return a == b
+        }
+    }
+    
     public static func gt<T: Comparable>(_ a: T, _ b: T) -> Bool {
         return a > b
     }
