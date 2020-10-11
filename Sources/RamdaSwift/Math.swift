@@ -9,7 +9,7 @@ import Foundation
 
 
 extension R {
-    static func sum<A: Numeric>(_ a: [A]) -> A {
+    public static func sum<A: Numeric>(_ a: [A]) -> A {
         return a.reduce(0, {$0 + $1})
     }
 }

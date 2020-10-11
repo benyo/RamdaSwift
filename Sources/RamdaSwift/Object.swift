@@ -9,7 +9,7 @@ import Foundation
 
 
 extension R {
-    static func prop<A, B>(key keyPath: KeyPath<A, B>, _ obj: A) -> B {
+    public static func prop<A, B>(key keyPath: KeyPath<A, B>, _ obj: A) -> B {
         return obj[keyPath: keyPath]
     }
 }
