@@ -12,4 +12,10 @@ extension R {
     public static func prop<A, B>(key keyPath: KeyPath<A, B>, _ obj: A) -> B {
         return obj[keyPath: keyPath]
     }
+    
+    public static func prop<A, B>(key keyPath: KeyPath<A, B>) -> (A) -> B {
+        return { value in
+            return value[keyPath: keyPath]
+        }
+    }
 }
