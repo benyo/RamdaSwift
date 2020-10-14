@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Logic.swift
 //  
 //
 //  Created by Benjamin Moreno Torres on 10/7/20.
@@ -42,6 +42,10 @@ extension R {
         default:
             return false
         }
+    }
+    
+    public static func ifElse<T>(_ a: Bool, _ b: T, _ c: T) -> T  {
+        return a ? b : c
     }
     
     public static func ifElse<A, B>(_ a: @escaping (A) -> Bool, _ b: @escaping (A) -> B, _ c: @escaping (A) -> B) -> ((A) -> B)  {

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Relation.swift
 //  
 //
 //  Created by Benjamin Moreno Torres on 10/7/20.
