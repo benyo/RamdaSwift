@@ -7,8 +7,6 @@
 
 import Foundation
 
-let a: Double = 1/2
-
 extension R {
     public static func add<T: Numeric>(_ a: T, _ b: T) -> T  {
         return a + b
@@ -42,5 +40,9 @@ extension R {
     
     public static func sum<A: Numeric>(_ a: [A]) -> A {
         return a.reduce(0, {$0 + $1})
+    }
+    
+    public static func negative<T: BinaryFloatingPoint>(_ a: T) -> T {
+        return -a
     }
 }
