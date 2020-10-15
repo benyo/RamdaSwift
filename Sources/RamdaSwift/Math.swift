@@ -20,7 +20,7 @@ extension R {
     
     public static func multiply<T: Numeric>(_ a: T, _ b: T) -> T  {
         return a * b
-    }    
+    }
     
     public static func multiply<T: Numeric>(_ b: T) -> (T) -> T  {
         return { a in
@@ -50,6 +50,10 @@ extension R {
     
     public static func sum<A: Numeric>(_ a: [A]) -> A {
         return a.reduce(0, {$0 + $1})
+    }
+    
+    public static func sum<A, B: Numeric>(by keyPath: KeyPath<A, B>, _ b: [A]) -> B {
+        return b.reduce(0, {$0 + $1[keyPath: keyPath]})
     }
     
     public static func negative<T: BinaryFloatingPoint>(_ a: T) -> T {
