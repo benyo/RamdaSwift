@@ -20,6 +20,10 @@ extension R {
         }
     }
     
+    public static func union<A, B: Comparable>(key keyPath: KeyPath<A, B>,_ a: [A], _ b: [A]) -> [A] {
+        return R.uniq(key: keyPath, R.concat(a, b))
+    }
+    
     public static func equals<A, B: Comparable>(key keyPath: KeyPath<A, B>, _ b: B ) -> (A) -> Bool {
         return { a in
             return a[keyPath: keyPath] == b
